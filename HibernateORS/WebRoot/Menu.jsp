@@ -1,0 +1,1 @@
+<img src="images/index.jpg" height="100" width="300">

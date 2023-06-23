@@ -1,0 +1,1 @@
+<%response.sendRedirect("Layout.jsp?body=Welcome.jsp"); %>

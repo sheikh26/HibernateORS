@@ -18,18 +18,18 @@ public class MarksheetCtrl extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String op = request.getPaparameter("operation");
+		String op = request.getParameter("operation");
 		try {
 
 			MarksheetDTO marksheetDTO = new MarksheetDTO();
 			MarksheetService marksheetService = new MarksheetService();
 
 			if ("Add".equalsIgnoreCase(op)) {
-				int RollNo = Integer.parseInt(request.getPaparameter("RollNo"));
-				String Name = request.getPaparameter("Name");
-				int phy = Integer.parseInt(request.getPaparameter("phy"));
-				int che = Integer.parseInt(request.getPaparameter("che"));
-				int maths = Integer.parseInt(request.getPaparameter("maths"));
+				int RollNo = Integer.parseInt(request.getParameter("RollNo"));
+				String Name = request.getParameter("Name");
+				int phy = Integer.parseInt(request.getParameter("phy"));
+				int che = Integer.parseInt(request.getParameter("che"));
+				int maths = Integer.parseInt(request.getParameter("maths"));
 
 				marksheetDTO.setRollNo(RollNo);
 				marksheetDTO.setName(Name);
@@ -45,7 +45,7 @@ public class MarksheetCtrl extends HttpServlet {
 			}
 
 			if ("Delete".equalsIgnoreCase(op)) {
-				int RollNo = Integer.parseInt(request.getPaparameter("RollNo"));
+				int RollNo = Integer.parseInt(request.getParameter("RollNo"));
 				marksheetDTO.setRollNo(RollNo);
 
 				marksheetService.delete(marksheetDTO);
@@ -55,11 +55,11 @@ public class MarksheetCtrl extends HttpServlet {
 			}
 
 			if ("update".equalsIgnoreCase(op)) {
-				int RollNo = Integer.parseInt(request.getPaparameter("RollNo"));
-				String Name = request.getPaparameter("Name");
-				int phy = Integer.parseInt(request.getPaparameter("phy"));
-				int che = Integer.parseInt(request.getPaparameter("che"));
-				int maths = Integer.parseInt(request.getPaparameter("maths"));
+				int RollNo = Integer.parseInt(request.getParameter("RollNo"));
+				String Name = request.getParameter("Name");
+				int phy = Integer.parseInt(request.getParameter("phy"));
+				int che = Integer.parseInt(request.getParameter("che"));
+				int maths = Integer.parseInt(request.getParameter("maths"));
 
 				marksheetDTO.setRollNo(RollNo);
 				marksheetDTO.setName(Name);
@@ -73,7 +73,7 @@ public class MarksheetCtrl extends HttpServlet {
 				rd.forward(request, response);
 			}
 			if ("Search".equalsIgnoreCase(op)) {
-				String Name = request.getPaparameter("name");
+				String Name = request.getParameter("name");
 				marksheetDTO.setName(Name);
 				List list = marksheetService.Get1(marksheetDTO);
 				System.out.println("list size in action " + list.size());
@@ -91,7 +91,7 @@ public class MarksheetCtrl extends HttpServlet {
 			}
 
 			if ("GetRecords".equalsIgnoreCase(op)) {
-				int RollNo = Integer.parseInt(request.getPaparameter("RollNo"));
+				int RollNo = Integer.parseInt(request.getParameter("RollNo"));
 				marksheetDTO.setRollNo(RollNo);
 
 				marksheetDTO = marksheetService.Get(marksheetDTO);

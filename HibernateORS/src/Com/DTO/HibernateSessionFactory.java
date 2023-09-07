@@ -45,7 +45,7 @@ public class HibernateSessionFactory {
      *  @return Session
      *  @throws HibernateException
      */
-    public static Session getSession() throws HibernateException {
+    public static Session getSession() throws Exception {
         Session session = (Session) threadLocal.get();
 
 		if (session == null || !session.isOpen()) {
@@ -80,7 +80,7 @@ public class HibernateSessionFactory {
      *
      *  @throws HibernateException
      */
-    public static void closeSession() throws HibernateException {
+    public static void closeSession() throws Exception {
         Session session = (Session) threadLocal.get();
         threadLocal.set(null);
 

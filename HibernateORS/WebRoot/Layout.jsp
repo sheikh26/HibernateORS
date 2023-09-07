@@ -22,7 +22,7 @@
 					<jsp:include page="Menu.jsp" />
 				</td>
 				<%
-					String body = request.getPaparameter("body");
+					String body = request.getParameter("body");
 				%>
 				<td>
 					<jsp:include page="<%=body%>" />

@@ -16,9 +16,9 @@ public class NameCtrl extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	  String op=request.getPaparameter("operation");
+	  String op=request.getParameter("operation");
 	  try{
-		  String name=request.getPaparameter("name");
+		  String name=request.getParameter("name");
 		  MarksheetDTO marksheetDTO=new MarksheetDTO();
 		  marksheetDTO.setName(name);
 		  MarksheetService marksheetService=new MarksheetService();

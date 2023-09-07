@@ -13,8 +13,8 @@ public class WelcomeCtrl extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String op = request.getPaparameter("operation");
-		String type = request.getPaparameter("type");
+		String op = request.getParameter("operation");
+		String type = request.getParameter("type");
 		if ("Submit".equalsIgnoreCase(op)) {
 
 			if("searchByName".equalsIgnoreCase(type))

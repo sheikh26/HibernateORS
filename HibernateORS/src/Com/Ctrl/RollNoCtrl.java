@@ -16,9 +16,9 @@ public class RollNoCtrl extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String op=request.getPaparameter("operation");
+		String op=request.getParameter("operation");
 		try{
-			int RollNo= Integer.parseInt(request.getPaparameter("RollNO"));
+			int RollNo= Integer.parseInt(request.getParameter("RollNO"));
 			MarksheetDTO marksheetDTO=new MarksheetDTO();
 			marksheetDTO.setRollNo(RollNo);
 			MarksheetService marksheetService=new MarksheetService();

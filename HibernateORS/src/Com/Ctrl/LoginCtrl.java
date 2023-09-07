@@ -19,9 +19,9 @@ public class LoginCtrl extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String UserName = request.getPaparameter("user");
-		String Password = request.getPaparameter("password");
-		String op = request.getPaparameter("operation");
+		String UserName = request.getParameter("user");
+		String Password = request.getParameter("password");
+		String op = request.getParameter("operation");
 		HttpSession session = request.getSession(true);
 
 		LoginDTO loginDTO = new LoginDTO();
